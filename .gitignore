@@ -27,6 +27,12 @@ go.work.sum
 # env file
 .env
 
+# Compiled binary
+go-do
+
+# llama.cpp source tree (cloned by buildall.sh — not versioned here)
+llama.cpp/
+
 # Editor/IDE
 # .idea/
 # .vscode/
