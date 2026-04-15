@@ -133,7 +133,9 @@ echo ""
 
 echo "Installing llama.cpp to system paths (requires sudo)..."
 sudo cmake --install build
-sudo ldconfig
+if [[ "$(uname -s)" == "Linux" ]] && command -v ldconfig >/dev/null 2>&1; then
+    sudo ldconfig
+fi
 echo ""
 
 # ---------------------------------------------------------------------------

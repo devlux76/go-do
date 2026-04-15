@@ -447,7 +447,7 @@ func runInference(
 	cPrompt := C.CString(prompt)
 	defer C.free(unsafe.Pointer(cPrompt))
 
-	tokBuf := make([]C.llama_token, nCtx)
+	tokBuf := make([]C.llama_token, int(nCtx))
 	nTok := int32(C.go_tokenize(model, cPrompt,
 		&tokBuf[0], C.int(nCtx), 1, 1))
 	if nTok < 0 {
